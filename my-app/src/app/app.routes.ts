@@ -11,11 +11,11 @@ export const routes: Routes = [
     {
         path:'productos',
         loadChildren: ()=> import('./page/producto/producto.routes').then(m => m.PRODUCTO_ROUTES),
-        canActivateChild: [authGuard,accessControlGuard]
+       // canActivateChild: [authGuard,accessControlGuard]
     },
     {
         path:'empleados',
         loadChildren:() => import('./page/empleado/empleado.routes').then(m => m.EMPLEADO_ROUTES),
-        canActivateChild: [authGuard,accessControlGuard]
+       // canActivateChild: [authGuard,accessControlGuard]
     }
 ];
