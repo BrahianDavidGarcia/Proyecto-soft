@@ -80,30 +80,22 @@ export class CrearEmpleadoComponent {
   *@return false - el objeto no cumple con las validaciones
  */
   validarDatosEmpleado(): boolean {
-    
-    let respuesta:boolean =true;
-
-    //validar que sean enteros
-    if(!(Number.isInteger(this.cedulaNoValidada) && Number.isInteger(this.telefonoNoValidado))){
-      respuesta=false;
-      alert('los datos de precio y cantidad deben ser valores numericos enteros');
+    let respuesta: boolean = true;
+  
+    // Validar que sean enteros
+    if (!(Number.isInteger(this.cedulaNoValidada) && Number.isInteger(this.telefonoNoValidado))) {
+      respuesta = false;
+      alert('Los datos de cédula y teléfono deben ser valores numéricos enteros');
     }
-
-    //validar que sean mayores que cero
-    if(!(this.cedulaNoValidada>=0 && this.telefonoNoValidado>=0)){
-      respuesta=false;
-      alert('los datos de precio y cantidad deben ser valores coherentes de cero en adelante');
+  
+    // Validar que sean mayores que cero
+    if (!(this.cedulaNoValidada >= 0 && this.telefonoNoValidado >= 0)) {
+      respuesta = false;
+      alert('Los datos de cédula y teléfono deben ser valores coherentes de cero en adelante');
     }
-
-    //validar que tengan un minimo de digitos
-    if(!(this.cedulaNoValidada.toLocaleString.length>10 && this.telefonoNoValidado.toLocaleString.length>10)){{
-      respuesta=false;
-      alert('la cedula  y/o el telefono debe de tener un minimo de 10 digitos');
-    }}
-
     return respuesta;
   }
-
+  
 
 
  /*
