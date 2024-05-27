@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="agregar-producto-form"></div>
+    
+    <div class="container">
+        <h1>AGREGAR UN PRODUCTO</h1>
+        <div class="row">
+            <!-- Columna para listas desplegables -->
+            <div class="col-md-6">
+
+                <div class="container">
+                    <!--LISTA PRENDAS-->
+                    <div>
+                        <h4>PRENDAS</h4>
+                        <mat-form-field>
+                            <mat-label>prenda</mat-label>
+                            <mat-select [(ngModel)]="productoData.prenda" >
+                                <mat-option *ngFor="let prenda2 of prendas"
+                                    [value]="prenda2.value">{{prenda2.viewValue}}</mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- LISTA INSTITUCIONES -->
+                    <div>
+                        <h4>INSTITUCIONES</h4>
+                        <mat-form-field>
+                            <mat-label>institucion</mat-label>
+                            <mat-select [(ngModel)]="productoData.institucion">
+                                <mat-option *ngFor="let institucion of instituciones"
+                                    [value]="institucion.value">{{institucion.viewValue}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- LISTA TALLAS -->
+                    <div>
+                        <h4>TALLAS</h4>
+                        <mat-form-field>
+                            <mat-label>talla</mat-label>
+                            <mat-select [(ngModel)]="productoData.talla">
+                                <mat-option *ngFor="let talla of tallas"
+                                    [value]="talla.value">{{talla.viewValue}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- LISTA HORARIOS -->
+                    <div>
+                        <h4>HORARIOS</h4>
+                        <mat-form-field>
+                            <mat-label>horario</mat-label>
+                            <mat-select [(ngModel)]="productoData.horario">
+                                <mat-option *ngFor="let horario of horarios"
+                                    [value]="horario.value">{{horario.viewValue}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!--LISTA GENEROS-->
+                    <div>
+                        <h4>GENEROS</h4>
+                        <mat-form-field>
+                            <mat-label>genero</mat-label>
+                            <mat-select [(ngModel)]="productoData.genero">
+                                <mat-option *ngFor="let genero of generos"
+                                    [value]="genero.value">{{genero.viewValue}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Columna para Precio, Cantidad y Botón -->
+            <div class="col-md-6 campos-derecha">
+
+                <div class="container">
+                    <div class="precio-cantidad">
+                        <!-- Campo de Precio -->
+                        <div class="campos-derecha">
+                            <label for="precio">Precio:</label>
+                            <input type="number" id="precio" [(ngModel)]="productoData.precio" name="precio" placeholder="Ingresa el precio" min="0"
+                                step="100.00" required>
+                        </div>
+
+                        <!-- Campo de Cantidad -->
+                        <div classs="campos-derecha">
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="number" id="cantidad" [(ngModel)]="productoData.cantidad" name="cantidad" placeholder="Ingresa la cantidad" min="0"
+                                step="1" required>
+                        </div>
+
+                        <!--campo de Descripcion-->
+                        <div class="campos-derecha">
+                            <label for="descripcion">Descripción:</label>
+                            <textarea id="descripcion" [(ngModel)]="productoData.descripcion" class="form-control" name="descripcion" rows="4" required placeholder="Escribe una descripción del producto aquí..."></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- BOTON CREAR-->
+                <div class="btn-crear">
+                    <button class="btn btn-success" (click)="agregarProducto()">Agregar</button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+    <!-- Boton Volver-->
+    <div class="btn-volver">
+        <button class="btn btn-success" (click)="volverTabla()">Volver</button>
+    </div>
+</body>
+
+</html>
