@@ -16,7 +16,7 @@ export class ProductoService {
   /*
   *url que lleva a la api de los productos
   */
-  private productosURL = 'https://cacique-erp.azurewebsites.net/api/manejoProducto';
+  private productosURL = 'http://localhost:8081/api/manejoProducto';
 
 
 
